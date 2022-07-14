@@ -48,7 +48,7 @@ app.get('/', async (req: Request, res: Response) => {
 app.get("/connect", (req: Request, res: Response) => {
     const clientIp = req.socket.remoteAddress?.replace("::ffff:", "");
     console.log(clientIp);
-    const adb = "\\Users\\user\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe";
+    const adb = "%LOCALAPPDATA%\\Android\\Sdk\\platform-tools\\adb.exe";
 
     const a = execSync(`${adb} tcpip 5555`);
     console.log(a.toString());
